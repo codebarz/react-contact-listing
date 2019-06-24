@@ -7,11 +7,14 @@
 }
 .single-list span {
   font-size: 16px;
-  flex: 0 0 85%;
+  flex: 0 0 37.5%;
   margin-left: 5%;
 }
 .single-list button {
   font-size: 1vw;
   border: none;
   flex: 0 0 5%;
+}
+.contact-number {
+  font-weight: bold;
 }

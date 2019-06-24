@@ -8,7 +8,8 @@ function List() {
   if (!editState.editing) {
     return (
       <div className="single-list">
-        <span>tega</span>
+        <span className="contact-name">tega</span>
+        <span className="contact-number">08051812473</span>
         <button>
           <i className="mdi mdi-account-edit" />
         </button>
