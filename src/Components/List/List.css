@@ -1,0 +1,17 @@
+.single-list {
+  width: 90%;
+  padding: 20px 0;
+  border-bottom: 1px solid #f0f0f8;
+  display: flex;
+  margin: 5px auto;
+}
+.single-list span {
+  font-size: 16px;
+  flex: 0 0 85%;
+  margin-left: 5%;
+}
+.single-list button {
+  font-size: 1vw;
+  border: none;
+  flex: 0 0 5%;
+}
