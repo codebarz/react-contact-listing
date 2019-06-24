@@ -18,11 +18,14 @@ function ListBoard() {
       <button className="add-new-button">
         <i className="mdi mdi-plus" />
       </button>
-      <List>
-        {contactState.contact.map(contact => {
-          return contact;
-        })}
-      </List>
+      {contactState.contact.map((contact, index) => {
+        return (
+          <List key={index} index={index}>
+            <span className="contact-name">{contact.name}</span>
+            <span className="contact-number">{contact.number}</span>
+          </List>
+        );
+      })}
     </div>
   );
 }

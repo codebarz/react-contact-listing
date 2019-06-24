@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './List.css';
 
-function List() {
+function List(props) {
   const [editState, setEditState] = useState({ editing: false });
 
   const edit = () => {
@@ -16,8 +16,7 @@ function List() {
   if (!editState.editing) {
     return (
       <div className="single-list">
-        <span className="contact-name">tega</span>
-        <span className="contact-number">08051812473</span>
+        {props.children}
         <button onClick={edit}>
           <i className="mdi mdi-account-edit" />
         </button>
