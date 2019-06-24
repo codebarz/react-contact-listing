@@ -30,7 +30,7 @@ function List() {
     return (
       <div className="single-list">
         <input type="text" />
-        <input type="number" />
+        <input type="text" />
         <button onClick={save}>
           <i className="mdi mdi-content-save-edit" />
         </button>
