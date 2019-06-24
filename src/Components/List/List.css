@@ -4,14 +4,27 @@
   border-bottom: 1px solid #f0f0f8;
   display: flex;
   margin: 5px auto;
+  clear: both;
 }
-.single-list span {
+.single-list span,
+.single-list input {
   font-size: 16px;
-  flex: 0 0 85%;
+  flex: 0 0 37.5%;
   margin-left: 5%;
+}
+.single-list input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+.single-list input:focus {
+  box-shadow: 0 5px 5px -5px #ccc;
 }
 .single-list button {
   font-size: 1vw;
   border: none;
   flex: 0 0 5%;
+}
+.contact-number {
+  font-weight: bold;
 }
