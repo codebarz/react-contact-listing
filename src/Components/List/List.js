@@ -9,6 +9,10 @@ function List() {
     setEditState({ editing: true });
   };
 
+  const save = () => {
+    setEditState({ editing: false });
+  };
+
   if (!editState.editing) {
     return (
       <div className="single-list">
@@ -27,7 +31,7 @@ function List() {
       <div className="single-list">
         <input type="text" />
         <input type="number" />
-        <button>
+        <button onClick={save}>
           <i className="mdi mdi-content-save-edit" />
         </button>
       </div>
