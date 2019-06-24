@@ -1,5 +1,7 @@
 import React from 'react';
 
+import List from '../List/List';
+
 import './ListBoard.css';
 
 function ListBoard() {
@@ -8,6 +10,7 @@ function ListBoard() {
       <button className="add-new-button">
         <i className="mdi mdi-plus" />
       </button>
+      <List />
     </div>
   );
 }
