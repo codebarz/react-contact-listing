@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './List.css';
+
 function List() {
   const [editState, setEditState] = useState({ editing: false });
 
