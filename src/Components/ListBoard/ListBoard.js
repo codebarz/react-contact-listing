@@ -8,10 +8,16 @@ function ListBoard() {
   const [contactState, setContactState] = useState({
     contact: [
       { name: 'Oke Tega', number: '08051812473' },
-      { name: 'Tosin Ainag', number: '08157214803' },
+      { name: 'Tosin Ainah', number: '08157214803' },
       { name: 'Joseph Oke', number: '08034972063' }
     ]
   });
+
+  const deleteForm = index => {
+    let contact = contactState.contact;
+    contact.splice(index, 1);
+    setContactState({ contact });
+  };
 
   return (
     <div className="display">
