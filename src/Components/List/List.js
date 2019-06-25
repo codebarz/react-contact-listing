@@ -34,8 +34,8 @@ function List(props) {
   const renderForm = () => {
     return (
       <div className="single-list">
-        <input type="text" />
-        <input type="text" />
+        <input type="text" defaultValue={props.children[0].props.name} />
+        <input type="text" defaultValue={props.children[0].props.number} />
         <button onClick={save}>
           <i className="mdi mdi-content-save-edit" />
         </button>

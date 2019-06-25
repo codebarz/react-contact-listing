@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import List from '../List/List';
 
@@ -12,6 +12,8 @@ function ListBoard() {
       { name: 'Joseph Oke', number: '08034972063' }
     ]
   });
+
+  const inputRef = useRef(null);
 
   const deleteForm = index => {
     let contact = contactState.contact;
@@ -27,7 +29,13 @@ function ListBoard() {
       {contactState.contact.map((contact, index) => {
         return (
           <List deleteContact={deleteForm} key={index} index={index}>
-            <span className="contact-name">{contact.name}</span>
+            <span
+              name={contact.name}
+              number={contact.number}
+              className="contact-name"
+            >
+              {contact.name}
+            </span>
             <span className="contact-number">{contact.number}</span>
           </List>
         );
