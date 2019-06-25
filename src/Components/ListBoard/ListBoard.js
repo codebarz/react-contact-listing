@@ -26,7 +26,7 @@ function ListBoard() {
       </button>
       {contactState.contact.map((contact, index) => {
         return (
-          <List key={index} index={index}>
+          <List deleteContact={deleteForm} key={index} index={index}>
             <span className="contact-name">{contact.name}</span>
             <span className="contact-number">{contact.number}</span>
           </List>

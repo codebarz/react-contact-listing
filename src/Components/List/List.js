@@ -13,6 +13,10 @@ function List(props) {
     setEditState({ editing: false });
   };
 
+  const remove = () => {
+    return props.deleteContact(props.index);
+  };
+
   if (!editState.editing) {
     return (
       <div className="single-list">
@@ -20,7 +24,7 @@ function List(props) {
         <button onClick={edit}>
           <i className="mdi mdi-account-edit" />
         </button>
-        <button>
+        <button onClick={remove}>
           <i className="mdi mdi-delete" />
         </button>
       </div>
