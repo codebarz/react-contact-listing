@@ -17,7 +17,7 @@ function List(props) {
     return props.deleteContact(props.index);
   };
 
-  if (!editState.editing) {
+  const renderNormal = () => {
     return (
       <div className="single-list">
         {props.children}
@@ -29,7 +29,9 @@ function List(props) {
         </button>
       </div>
     );
-  } else {
+  };
+
+  const renderForm = () => {
     return (
       <div className="single-list">
         <input type="text" />
@@ -39,7 +41,12 @@ function List(props) {
         </button>
       </div>
     );
+  };
+
+  if (!editState.editing) {
+    return renderNormal();
+  } else {
+    return renderForm();
   }
 }
-
 export default List;
