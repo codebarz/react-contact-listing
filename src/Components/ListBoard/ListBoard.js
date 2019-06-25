@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import List from '../List/List';
 
@@ -8,10 +8,18 @@ function ListBoard() {
   const [contactState, setContactState] = useState({
     contact: [
       { name: 'Oke Tega', number: '08051812473' },
-      { name: 'Tosin Ainag', number: '08157214803' },
+      { name: 'Tosin Ainah', number: '08157214803' },
       { name: 'Joseph Oke', number: '08034972063' }
     ]
   });
+
+  const inputRef = useRef(null);
+
+  const deleteForm = index => {
+    let contact = contactState.contact;
+    contact.splice(index, 1);
+    setContactState({ contact });
+  };
 
   return (
     <div className="display">
@@ -20,8 +28,14 @@ function ListBoard() {
       </button>
       {contactState.contact.map((contact, index) => {
         return (
-          <List key={index} index={index}>
-            <span className="contact-name">{contact.name}</span>
+          <List deleteContact={deleteForm} key={index} index={index}>
+            <span
+              name={contact.name}
+              number={contact.number}
+              className="contact-name"
+            >
+              {contact.name}
+            </span>
             <span className="contact-number">{contact.number}</span>
           </List>
         );

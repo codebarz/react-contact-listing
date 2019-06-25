@@ -13,29 +13,40 @@ function List(props) {
     setEditState({ editing: false });
   };
 
-  if (!editState.editing) {
+  const remove = () => {
+    return props.deleteContact(props.index);
+  };
+
+  const renderNormal = () => {
     return (
       <div className="single-list">
         {props.children}
         <button onClick={edit}>
           <i className="mdi mdi-account-edit" />
         </button>
-        <button>
+        <button onClick={remove}>
           <i className="mdi mdi-delete" />
         </button>
       </div>
     );
-  } else {
+  };
+
+  const renderForm = () => {
     return (
       <div className="single-list">
-        <input type="text" />
-        <input type="text" />
+        <input type="text" defaultValue={props.children[0].props.name} />
+        <input type="text" defaultValue={props.children[0].props.number} />
         <button onClick={save}>
           <i className="mdi mdi-content-save-edit" />
         </button>
       </div>
     );
+  };
+
+  if (!editState.editing) {
+    return renderNormal();
+  } else {
+    return renderForm();
   }
 }
-
 export default List;
